@@ -1,0 +1,76 @@
+<div class='title-contents'>
+  <h2 class='service-title'>
+    リフリジレイターで冷蔵庫を整理しよう！！
+  </h2>
+</div>
+
+
+<div class='feature-contents'>
+  <h2 class='title'>
+    リフリジレイターの特徴
+  </h2>
+  <ul class='feature-lists'>
+    <li class='list'>
+        
+      <h3 class='feature-list-text'>
+        余った食材で検索
+      </h3>
+      <p class='feature-list-description'>
+        検索した食材を使ったレシピを一覧表示できます。
+      </p>
+    </li>
+    <li class='list'>
+        
+      <h3 class='feature-list-text'>
+        自分のレシピを教える
+      </h3>
+      <p class='feature-list-description'>
+        検索はもちろん自分のレシピをアップすることができます。
+      </p>
+    </li>
+    <li class='list'>
+        
+      <h3 class='feature-list-text'>
+        お気に入りのレシピを保存
+      </h3>
+      <p class='feature-list-description'>
+        お気に入りに保存したレシピをすぐに見る事ができます。
+      </p>
+    </li>
+  </ul>
+</div>
+
+
+<%# 商品一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <%= link_to '新規投稿商品', new_cooking_path , class: "subtitle" %>
+    <ul class='item-lists'>
+
+      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <%# <% @items.each do |item| %> 
+       <li class='list'>
+        <%= link_to "#" do %>
+        <div class='item-img-content'>
+          <%# <%= image_tag item.image , class: "item-img" %> 
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "item.name" %>
+          </h3>
+          <div class='item-price'>
+            <span><%= "item.price" %>円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>８</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+       </li>
+      <%# <% end %> 
+      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+
+    </ul>
+  </div>
+  <%# //商品一覧 %>
