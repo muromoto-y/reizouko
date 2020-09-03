@@ -1,7 +1,7 @@
 class CookingsTag
 
-  include ActiveModel::Model
-  attr_accessor :cooking_name, :text, :material, :user_id, :name,
+  # include ActiveModel::Model
+  # attr_accessor :cooking_name, :text, :material, :user_id, :name,
 
   # with_options presence: true do
   #   validates :cooking_name
@@ -11,11 +11,11 @@ class CookingsTag
   #   validates :name
   # end
 
-  def save
-    cooking = Cooking.create(cooking_name: cooking_name, text: text, material: material)
-    tag = Tag.where(name: name).first_or_initialize
-    tag.save
+  # def save
+  #   cooking = Cooking.create(cooking_name: cooking_name, text: text, material: material)
+  #   tag = Tag.where(name: name).first_or_initialize
+  #   tag.save
 
-    CookingTagRelation.create(cooking_id: cooking.id, tag_id: tag.id)
-  end
+  #   CookingTagRelation.create(cooking_id: cooking.id, tag_id: tag.id)
+  # end
 end

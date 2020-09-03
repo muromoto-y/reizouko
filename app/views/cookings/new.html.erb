@@ -4,7 +4,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">自分のレシピを教える</h2>
-    <%= form_with  local: true do |f| %>
+    <%= form_with model:@cooking, url:cookings_path, local: true do |f| %>
   
 
  <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
@@ -21,7 +21,7 @@
     <p>
       クリックしてファイルをアップロード
     </p>
-  <%# <%= f.file_field :image, id:"item-image" %>
+  <%= f.file_field :image, id:"item-image" %>
   </div>
     <%# /料理画像 %>
 
@@ -32,60 +32,109 @@
       料理名
       <span class="indispensable">必須</span>
     </div>
-      <%# <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %> 
+      <%= f.text_area :cooking_name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %> 
   </div>
 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
   <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material1, placeholder:"例: 人参"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity1, placeholder:"例: 30g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material2, placeholder:"例: じゃがいも"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity2, placeholder:"例: 40g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material3, placeholder:"例: 牛肉"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity3, placeholder:"例: 50g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material4, placeholder:"例: 玉ねぎ"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity4, placeholder:"例: 30g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material5, placeholder:"例: 白滝"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity5, placeholder:"例: 20g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material6, placeholder:"例: 醤油"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity6, placeholder:"例: 50g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material7, placeholder:"例: みりん"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity7, placeholder:"例: 30g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material8, placeholder:"例: 酒"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity8, placeholder:"例: 30g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material9, placeholder:"例: 水"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity9, placeholder:"例: 100g"%> 
 
   <div class= "">
-    材料名•••{分量}
+    材料名
+  <span class="indispensable">必須</span>
   </div>
-  <%# <%= placeholder:"例: 人参•••{30g}"%> 
+  <%= f.text_area :material0, placeholder:"例: 砂糖"%> 
+  <div class= "">
+    {分量}
+  </div>
+  <%= f.text_area :quantity0, placeholder:"例: 30g"%> 
 
 
 
@@ -94,7 +143,7 @@
       商品の説明
       <span class="indispensable">必須</span>
     </div>
-     <%# <%= f.text_area :explanation, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %> 
+      <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %> 
   </div>
 
 

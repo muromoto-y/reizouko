@@ -1,27 +1,27 @@
 class CookingsController < ApplicationController
 
   def index
-    @cookings = Cooking.all.order(created_at: :desc)
+    @cookings = Cooking.all.order("created_at DESC")
   end
 
   def new
-    @cooking = CookingsTag.new
+    @cooking = Cooking.new
   end
 
   def create
-    @cooking = CookingsTag.new(cooking_params)
+    @cooking = Cooking.new(cooking_params)
     if @cooking.valid?
       @cooking.save
-      return redirect_to root_path
+      redirect_to root_path
     else
-      render "new"
+      render :new
     end
   end
 
   private
 
   def cooking_params
-    params.require(:cookings_tag).permit(:cooking_name, :text, :material, :name).merge(user_id: current_user.id)
+    params.require(:cooking).permit(:image, :cooking_name, :text, :material1, :quantity1, :name)#.merge(user_id: current_user.id)
   end
 
 end
