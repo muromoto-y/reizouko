@@ -12,7 +12,7 @@
 
   <ul class='lists-right'>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "", class: "user-nickname" %></li>
+        <li><%= link_to current_user.nick_name, "", class: "user-nickname" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
@@ -67,7 +67,7 @@
 
 <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
+    <h2 class='title'>最新の投稿</h2>
     <%= link_to '新規投稿商品', new_cooking_path , class: "subtitle" %>
     <ul class='item-lists'>
 
@@ -80,12 +80,8 @@
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= "cooking.name" %>
+            <%= cooking.cooking_name %>
           </h3>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>８</span>
-            </div>
         </div>
         <% end %>
        </li>
