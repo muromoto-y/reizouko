@@ -1,19 +1,17 @@
-<header class="items-sell-header">
-    <%= link_to image_tag('gobou.png' , size: '130x30'), "/" %>
-  </header>
-
 
 <%= form_with model: @user, url: new_user_session_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
+
+<header class="items-sell-header">
+    <%= link_to image_tag('gobou.png' , size: '130x30'), "/" %>
+</header>
+
   <div class='form-header'>
     <h1 class='form-header-text'>
       ユーザー情報入力
     </h1>
   </div>
-  <div class='login-flash-message'>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-  </div>
+  
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
@@ -26,10 +24,12 @@
       <label class="form-text">パスワード</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
+    <%= f.password_field :password, class:"input-default", id:"password"%>
   </div>
   <div class='login-btn'>
     <%= f.submit "ログイン" ,class:"login-red-btn" %>
+    
+    <p><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></p>
   </div>
 </div>
 <% end %>

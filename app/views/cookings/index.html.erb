@@ -1,31 +1,27 @@
-<header class='top-page-header'>
-  <div class='search-bar-contents'>
-    <%= link_to image_tag("gobou.png", class:"furima-icon"), "/" %>
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワードから探す'>
-      <button class="search-button">
-        検索
-      </button>
-    </form>
-  </div>
-
+<header class='search-bar-contents'>
+  <%= link_to image_tag("gobou.png", class: "fridge-icon"), "/" %>
 
   <ul class='lists-right'>
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.nick_name, "", class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
-    </ul>
-  </header>
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.nick_name, "", class: "user-nickname" %></li>
+      <li><%= link_to image_tag("logout.png", class: "logout-icon"), destroy_user_session_path, method: :delete, class: "logout" %></li>
+    <% else %>
+      <li><%= link_to image_tag("login.png", class: "login-icon"), new_user_session_path, class: "login" %></li>
+    <% end %>
+  </ul>
+</header>
 
 
 <div class='title-contents'>
-  <h2 class='service-title'>
+  <h3 class='service-title'>
     Fridge!で冷蔵庫を整理しよう！！
-  </h2>
+  </h3>
+<form class="search-form" action="#">
+      <input class='input-box' placeholder='食材・料理名'>
+      <button class="search-button">
+        レシピ検索
+      </button>
+    </form>
 </div>
 
 
@@ -35,7 +31,7 @@
   </h2>
   <ul class='feature-lists'>
     <li class='list'>
-        
+      <%= image_tag "kensaku.jpg" , class: "item-img" %> 
       <h3 class='feature-list-text'>
         余った食材で検索
       </h3>
@@ -44,7 +40,7 @@
       </p>
     </li>
     <li class='list'>
-        
+      <%= image_tag "osieru.jpg" , class: "item-img" %>
       <h3 class='feature-list-text'>
         自分のレシピを教える
       </h3>
@@ -53,7 +49,7 @@
       </p>
     </li>
     <li class='list'>
-        
+      <%= image_tag "okiniiri.jpg" , class: "item-img" %>
       <h3 class='feature-list-text'>
         お気に入りのレシピを保存
       </h3>
@@ -67,7 +63,7 @@
 
 <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>最新の投稿</h2>
+    <h2 class='title'>〜最新レシピ〜</h2>
     <%= link_to '新規投稿商品', new_cooking_path , class: "subtitle" %>
     <ul class='item-lists'>
 

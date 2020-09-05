@@ -1,6 +1,43 @@
+.search-bar-contents {
+  display: flex;
+  align-items: center;
+}
+
+.fridge-icon {
+  width: 10vw;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-form {
+  width: 65vw;
+  height: 5vh;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.search-form>.input-box {
+  width: 100%;
+  height: 5vh;
+  padding-left: 5px;
+}
+
+.search-button {
+  width: 15vh;
+  border: 0;
+  background-color: rgb(172, 170, 170);
+  cursor: pointer;
+  padding: 8px;
+}
+
 .title-contents {
   width: 100vw;
-  height: 30vh;
+  height: 40vh;
   background-image: image-url('reizouko.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,12 +51,91 @@
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
+.service-title {
+  font-size: 6vh;
+}
+
 .item-img {
   width: 33vh;
   height: 33vh;
 }
 
-.star-icon {
-  width: 2vh;
-  height: 2vh;
+.lists-right{
+list-style: none;
+display: flex;
+}
+
+.login{
+text-decoration: none;
+}
+
+.user-nickname{
+  margin-right: 10px;
+  color: #000;
+}
+
+.login-icon{
+  width: 4vh;
+  height: 4vh;
+}
+
+.list{
+  list-style: none;
+}
+
+.item-info{
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.item-contents{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+.item-name {
+  font-size: 2.5vh;
+}
+
+.feature-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-lists>.list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-contents {
+  padding: 5vw;
+}
+
+.subtitle{
+  color: #000;
 }
