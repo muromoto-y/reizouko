@@ -1,4 +1,4 @@
-.form-wrap{
+/* .form-wrap{
   height: 100vh;
   width: 100vw;
   background-color: #f8f8f8f8;
@@ -55,4 +55,23 @@
   width: 100px;
   height: 50px;
   cursor: pointer;
+} */
+
+.zairyou{
+  display: flex;
+}
+
+.aaa{
+  flex-direction: column;
+  margin-right:1vw;
+}
+
+.items-sell-contents{
+  display: flex;
+  justify-content: center;
+}
+
+.items-sell-header{
+  display: flex;
+  justify-content: center;
 }
