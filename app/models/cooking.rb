@@ -11,4 +11,11 @@ class Cooking < ApplicationRecord
   #   validates :material
   # end
 
+  def self.search(search)
+    if search != ""
+      Cooking.where('material LIKE(?)', "%#{search}%")
+    else
+      Cooking.all
+    end
+  end
 end

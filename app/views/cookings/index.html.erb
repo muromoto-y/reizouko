@@ -17,7 +17,7 @@
   <h3 class='service-title'>
     Fridge!で冷蔵庫を整理しよう！！
   </h3>
- <%= form_with(url: search_cookings_path, local: true, method: :get, class: "search-form") do |f| %>
+ <%= form_with(url: search_cookings_path, method: :get, class: "search-form", local: true) do |f| %>
   <%= f.text_field :keyword, placeholder: "料理名、材料", class: "search-input" %>
   <%= f.submit "レシピ検索", class: "search-btn" %>
 <% end %>
@@ -69,9 +69,9 @@
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @cookings.each do |cooking| %> 
        <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to cooking_path(cooking) do %>
         <div class='item-img-content'>
-          <%= image_tag cooking.image , class: "item-img"  %>
+          <%= image_tag cooking.image, class: "item-img"  %>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>

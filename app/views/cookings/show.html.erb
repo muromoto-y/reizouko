@@ -1,0 +1,51 @@
+<div class="item-show">
+    <h2 class="name">
+      <%= @cooking.cooking_name %>
+    </h2>
+  <div>
+    <%= image_tag @cooking.image ,class:"item-box-img" %>
+  </div>
+   <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">材料</th>
+          <td class="detail-value">
+          <% if @cooking.material1.present?%>
+            <P><%= @cooking.material1 %>・・・<%= @cooking.quantity1 %></p>
+          <%end%>
+          <% if @cooking.material2%>
+            <P><%= @cooking.material2 %>・・・<%= @cooking.quantity2 %></p>
+          <%end%>
+          <% if @cooking.material3.present?%>
+            <P><%= @cooking.material3 %>・・・<%= @cooking.quantity3 %></p>
+          <%end%>
+          <% if @cooking.material4.present?%>
+            <P><%= @cooking.material4 %>・・・<%= @cooking.quantity4 %></p>
+          <%end%>
+          <% if @cooking.material5.present?%>
+            <P><%= @cooking.material5 %>・・・<%= @cooking.quantity5 %></p>
+          <%end%>
+          <% if @cooking.material6.present?%>
+            <P><%= @cooking.material6 %>・・・<%= @cooking.quantity6 %></p>
+          <%end%>
+          <% if @cooking.material7.present?%>
+            <P><%= @cooking.material7 %>・・・<%= @cooking.quantity7 %></p>
+          <%end%>
+          <% if @cooking.material8.present?%>
+            <P><%= @cooking.material8 %>・・・<%= @cooking.quantity8 %></p>
+          <%end%>
+          <% if @cooking.material9.present?%>
+            <P><%= @cooking.material9 %>・・・<%= @cooking.quantity9 %></p>
+          <%end%>
+          <% if @cooking.material0.present?%>
+            <P><%= @cooking.material0 %>・・・<%= @cooking.quantity0 %></p>
+          <%end%>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <div class="item-explain-box">
+      <span><%= @cooking.text %></span>
+    </div>
+</div>
